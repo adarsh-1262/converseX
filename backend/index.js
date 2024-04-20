@@ -25,7 +25,7 @@ app.use(cookieParser());
 const customCorsMiddleware = cors({
   origin: 'https://converse-x.vercel.app', // Allow requests from this origin
   credentials: true, // Allow sending cookies
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the allowed HTTP methods
+  methods: ['GET', 'POST', 'PUT'], // Specify the allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify the allowed headers
 });
 app.use(cors(customCorsMiddleware));
