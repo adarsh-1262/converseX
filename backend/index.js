@@ -16,12 +16,17 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-const corsOption = {
+// const corsOption = {
+//     origin: 'https://converse-x.vercel.app',
+//     credentials: true,
+//     optionSuccessStatus: 200,
+// };
+// app.use(cors(corsOption));
+// CORS configuration
+app.use(cors({
     origin: 'https://converse-x.vercel.app',
     credentials: true,
-    optionSuccessStatus: 200,
-};
-app.use(cors(corsOption));
+}));
 
 // routes
 app.use("/api/v1/user", userRoute);
