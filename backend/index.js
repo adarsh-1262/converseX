@@ -21,12 +21,19 @@ app.use(cookieParser());
 //     credentials: true,
 //     optionSuccessStatus: 200,
 // };
-// app.use(cors(corsOption));
+// Define your custom CORS middleware function
+const customCorsMiddleware = cors({
+  origin: 'https://converse-x.vercel.app', // Allow requests from this origin
+  credentials: true, // Allow sending cookies
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Specify the allowed headers
+});
+app.use(cors(customCorsMiddleware));
 // CORS configuration
-app.use(cors({
-    origin: 'https://converse-x.vercel.app',
-    credentials: true,
-}));
+// app.use(cors({
+//     origin: 'https://converse-x.vercel.app',
+//     credentials: true,
+// }));
 
 // routes
 app.use("/api/v1/user", userRoute);
