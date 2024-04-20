@@ -10,7 +10,7 @@ import { persistStore } from 'redux-persist';
 
 let persistor = persistStore(store);
 
-export const BASE_URL = 'http://localhost:8000';
+export const BASE_URL = 'https://converse-x-backend.vercel.app/';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
