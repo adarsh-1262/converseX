@@ -11,7 +11,7 @@ function useGetOtherUsers() {
         const fetchOtherUsers = async () => {
             try {
                 axios.defaults.withCredentials = true;
-                const res = await axios.get(`/api/v1/user/`);
+                const res = await axios.get(`https://converse-x-backend.vercel.app/api/v1/user/`);
                 console.log(res);
 
                 //store
