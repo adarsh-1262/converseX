@@ -18,7 +18,7 @@ app.use(cookieParser());
 
 // CORS configuration using the cors() function directly
 app.use(cors({
-    origin:'https://converse-x.vercel.app/'
+    origin:'https://converse-x.vercel.app'
 }));
 
 
