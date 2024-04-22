@@ -13,7 +13,7 @@ function SendInput() {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`/api/v1/message/send/${selectedUser?._id}`, { message }, {
+            const res = await axios.post(`https://converse-x-backend.vercel.app/api/v1/message/send/${selectedUser?._id}`, { message }, {
                 headers: {
                     'Content-Type': 'application/json' // for sending data in json format
                 },
