@@ -3,6 +3,7 @@ import { IoSend } from "react-icons/io5";
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMessages } from '../redux/messageSlice';
+import { BASE_URL } from './main';
 
 function SendInput() {
     const [message, setMessage] = useState('');
@@ -13,7 +14,7 @@ function SendInput() {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`https://converse-x-backend.vercel.app/api/v1/message/send/${selectedUser?._id}`, { message }, {
+            const res = await axios.post(`${BASE_URL}/api/v1/message/send/${selectedUser?._id}`, { message }, {
                 headers: {
                     'Content-Type': 'application/json' // for sending data in json format
                 },
